@@ -6037,6 +6037,7 @@
         'distcp-document-widget': 'query-distcp',
         'shell-document-widget': 'query-shell',
         'mapreduce-document-widget': 'query-mapreduce',
+        'example-document-widget': 'query-shell',
       }
       var type = 'query-hive';
       if (options.type) {

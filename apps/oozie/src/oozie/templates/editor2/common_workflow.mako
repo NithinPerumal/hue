@@ -172,6 +172,10 @@
       <img src="${ static('oozie/art/icon_beeswax_48.png') }" class="widget-icon" alt="${ _('Hive icon') }">
       <!-- /ko -->
 
+      <!-- ko if: widgetType() == 'example-widget' || widgetType() == 'example-document-widget' -->
+      <img src="${ static('oozie/art/icon_sqoop_48.png') }" class="widget-icon" alt="${ _('Sqoop icon') }">
+      <!-- /ko -->
+
       <!-- ko if: widgetType() == 'hive2-widget' || widgetType() == 'hive-document-widget' -->
       <img src="${ static('oozie/art/icon_beeswax_48.png') }" class="widget-icon" alt="${ _('Hive icon') }"><sup style="color: #0B7FAD; margin-left: -4px">2</sup>
       <!-- /ko -->

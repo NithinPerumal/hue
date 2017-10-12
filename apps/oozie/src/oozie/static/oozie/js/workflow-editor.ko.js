@@ -278,6 +278,7 @@ var Workflow = function (vm, workflow) {
         if (data.status == 0) {
           viewModel.addActionProperties.removeAll();
           $.each(data.properties, function (i, prop) {
+            console.log(prop);
             viewModel.addActionProperties.push(ko.mapping.fromJS(prop));
           });
 
@@ -1348,6 +1349,7 @@ var WorkflowEditorViewModel = function (layout_json, workflow_json, credentials_
   self.draggableSshAction = ko.observable(bareWidgetBuilder("Ssh", "ssh-widget"));
   self.draggableFsAction = ko.observable(bareWidgetBuilder("Fs", "fs-widget"));
   self.draggableEmailAction = ko.observable(bareWidgetBuilder("Email", "email-widget"));
+  self.draggableExampleAction = ko.observable(bareWidgetBuilder("Shell", "example-action"));
   self.draggableStreamingAction = ko.observable(bareWidgetBuilder("Streaming", "streaming-widget"));
   self.draggableDistCpAction = ko.observable(bareWidgetBuilder("Distcp", "distcp-widget"));
   self.draggableSparkAction = ko.observable(bareWidgetBuilder("Spark", "spark-widget"));
@@ -1355,6 +1357,7 @@ var WorkflowEditorViewModel = function (layout_json, workflow_json, credentials_
   self.draggableHiveDocumentAction = ko.observable(bareWidgetBuilder("Hive", "hive-document-widget"));
   self.draggableImpalaDocumentAction = ko.observable(bareWidgetBuilder("Impala", "impala-document-widget"));
   self.draggableJavaDocumentAction = ko.observable(bareWidgetBuilder("Java", "java-document-widget"));
+  self.draggableExampleDocumentAction = ko.observable(bareWidgetBuilder("Shell", "example-document-widget"));
   self.draggableSparkDocumentAction = ko.observable(bareWidgetBuilder("Spark", "spark-document-widget"));
   self.draggablePigDocumentAction = ko.observable(bareWidgetBuilder("Pig", "pig-document-widget"));
   self.draggableSqoopDocumentAction = ko.observable(bareWidgetBuilder("Sqoop", "sqoop-document-widget"));

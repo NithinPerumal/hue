@@ -155,6 +155,7 @@ ${ layout.menubar(section='workflows', is_editor=True, pullright=buttons, is_emb
     </div>
     <!-- /ko -->
 
+
     % if ENABLE_IMPALA_ACTION.get():
       <!-- ko if: $root.availableActions().length == 0 || $root.availableActions().indexOf('impala') != -1 -->
       <div data-bind="css: { 'draggable-widget': true },
@@ -174,6 +175,8 @@ ${ layout.menubar(section='workflows', is_editor=True, pullright=buttons, is_emb
          <a class="draggable-icon"><i class="fa fa-file-code-o"></i></a>
     </div>
     <!-- /ko -->
+
+
 
     <!-- ko if: $root.availableActions().length == 0 || $root.availableActions().indexOf('spark2') != -1 -->
     <div data-bind="css: { 'draggable-widget': true },
@@ -201,6 +204,13 @@ ${ layout.menubar(section='workflows', is_editor=True, pullright=buttons, is_emb
          <a class="draggable-icon"><i class="fa fa-file-archive-o"></i></a>
     </div>
     <!-- /ko -->
+
+    <div data-bind="css: { 'draggable-widget': true },
+                    draggable: {data: draggableExampleDocumentAction(), isEnabled: true,
+                    options: {'refreshPositions': true, 'stop': function(){ $root.isDragging(false); }, 'start': function(event, ui){ $root.isDragging(true); $root.currentlyDraggedWidget(draggableExampleDocumentAction());}}}"
+         title="${_('Saved Example command')}" rel="tooltip" data-placement="top">
+         <a class="draggable-icon"><img src="${ static('oozie/art/icon_sqoop_48.png') }" class="app-icon" alt="${ _('Sqoop icon') }"></a>
+    </div>
 
     <!-- ko if: $root.availableActions().length == 0 || $root.availableActions().indexOf('sqoop1') != -1 -->
     <div data-bind="css: { 'draggable-widget': true },
@@ -256,6 +266,14 @@ ${ layout.menubar(section='workflows', is_editor=True, pullright=buttons, is_emb
          title="${_('Hive Script')}" rel="tooltip" data-placement="top">
          <a class="draggable-icon"><img src="${ static('oozie/art/icon_beeswax_48.png') }" class="app-icon" alt="${ _('Hive icon') }"></a>
     </div>
+    <!-- /ko -->
+
+    <!-- ko if: $root.availableActions().length == 0 || $root.availableActions().indexOf('shell') != -1 -->
+    <div data-bind="css: { 'draggable-widget': true },
+                    draggable: {data: draggableShellAction(), isEnabled: true,
+                    options: {'refreshPositions': true, 'stop': function(){ $root.isDragging(false); }, 'start': function(event, ui){ $root.isDragging(true); $root.currentlyDraggedWidget(draggableShellAction());}}}"
+         title="${_('Example program')}" rel="tooltip" data-placement="top">
+        <a class="draggable-icon"><img src="${ static('oozie/art/icon_sqoop_48.png') }" class="app-icon" alt="${ _('Sqoop icon') }"></a>    </div>
     <!-- /ko -->
 
     <!-- ko if: $root.availableActions().length == 0 || $root.availableActions().indexOf('hive') != -1 -->

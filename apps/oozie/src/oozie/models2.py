@@ -2865,7 +2865,8 @@ NODES = {
   'sqoop-document-widget': SqoopDocumentAction,
   'distcp-document-widget': DistCpDocumentAction,
   'shell-document-widget': ShellDocumentAction,
-  'mapreduce-document-widget': MapReduceDocumentAction
+  'mapreduce-document-widget': MapReduceDocumentAction,
+  'example-document-widget':ShellDocumentAction
 }
 
 
